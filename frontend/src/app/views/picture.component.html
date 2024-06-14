@@ -1,0 +1,18 @@
+<!-- View 2 -->
+<div>
+    <img [src]="imageData" class="thumbnail"/>
+</div>
+<form [formGroup]="uploadForm" (ngSubmit)="save()">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" formControlName="title" minlength="5">
+    </div>
+    <div>
+        <label for="comments">Comments</label>
+        <textarea name="comments" cols="30" rows="10" formControlName="comments"></textarea>
+    </div>
+    <div>
+        <button type="button" (click)="backButtonClicked()" [routerLink]="['/']">Back</button>
+        <button type="submit" [disabled]="!uploadForm.valid">Post</button>
+    </div>   
+</form>
